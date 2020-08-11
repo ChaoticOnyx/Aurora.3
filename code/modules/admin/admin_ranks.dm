@@ -115,7 +115,7 @@ var/list/admin_ranks = list()								//list of all ranks with associated rights
 			load_admins()
 			return
 
-		var/DBQuery/query = dbcon.NewQuery("SELECT ckey, rank, (flags & 0xFFFF) as flags FROM ss13_player WHERE rank IS NOT NULL AND (flags & 0xFFFF) != 0")
+		var/DBQuery/query = dbcon.NewQuery("SELECT ckey, `rank`, (flags & 0xFFFF) as flags FROM ss13_player WHERE `rank` IS NOT NULL AND (flags & 0xFFFF) != 0")
 		query.Execute()
 		while(query.NextRow())
 			var/ckey = query.item[1]
