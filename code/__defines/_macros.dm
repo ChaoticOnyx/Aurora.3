@@ -83,7 +83,6 @@
 #define to_world(message)                                   world << message
 #define sound_to(target, sound)                             target << sound
 #define to_file(file_entry, file_content)                   file_entry << file_content
-#define show_browser(target, browser_content, browser_name) target << browse(browser_content, browser_name)
 #define send_rsc(target, rsc_content, rsc_name)             target << browse_rsc(rsc_content, rsc_name)
 #define send_output(target, msg, control)                   target << output(msg, control)
 #define send_link(target, url)                              target << link(url)
@@ -94,3 +93,6 @@
 #define isweakref(target) istype(target, /datum/weakref)
 #define isopenspace(A) istype(A, /turf/simulated/open)
 #define isdatum(target) istype(target, /datum)
+
+#define __HTML_META_CHARSET__ "<meta charset=\"utf-8\">"
+#define show_browser(target, browser_content, browser_options) target << browse(browser_content ? __HTML_META_CHARSET__ + browser_content : browser_content, browser_options)
