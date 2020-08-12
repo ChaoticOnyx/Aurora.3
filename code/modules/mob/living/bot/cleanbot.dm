@@ -271,7 +271,7 @@ var/list/cleanbot_types // Going to use this to generate a list of types once th
 		dat += "Odd looking screw twiddled: <A href='?src=\ref[src];operation=screw'>[screw_loose ? "Yes" : "No"]</A><BR>"
 		dat += "Weird button pressed: <A href='?src=\ref[src];operation=odd_button'>[odd_button ? "Yes" : "No"]</A>"
 
-	user << browse("<HEAD><TITLE>Cleaner v1.1 controls</TITLE></HEAD>[dat]", "window=autocleaner")
+	show_browser(user, "<HEAD><TITLE>Cleaner v1.1 controls</TITLE></HEAD>[dat]", "window=autocleaner")
 	onclose(user, "autocleaner")
 	return
 

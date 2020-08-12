@@ -481,7 +481,7 @@
 		to_chat(src, SPAN_WARNING("WARNING: Power too low for self-diagnostic functions."))
 		return
 	var/dat = self_diagnosis()
-	src << browse(dat, "window=robotdiagnosis")
+	show_browser(src, dat, "window=robotdiagnosis")
 
 /mob/living/silicon/robot/verb/toggle_component()
 	set category = "Robot Commands"
@@ -882,7 +882,7 @@
 			dat += text("[module.malf_AI_module]: <B>Activated</B><BR>")
 		else
 			dat += text("[module.malf_AI_module]: <A HREF=?src=\ref[src];act=\ref[module.malf_AI_module]>Activate</A><BR>")
-	src << browse(dat, "window=robotmod")
+	show_browser(src, dat, "window=robotmod")
 
 
 /mob/living/silicon/robot/Topic(href, href_list)

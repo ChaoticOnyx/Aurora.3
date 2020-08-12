@@ -45,13 +45,13 @@
 			var/mob/M = monster[i]
 			var/name = capitalize(initial(M.name))
 			dat += "<BR><a href='byond://?src=\ref[src];path=[monster[i]]'>[name]</a> - [monster_info[i]]</BR>"
-	user << browse(dat,"window=monstermanual")
+	show_browser(user, dat, "window=monstermanual")
 	onclose(user,"monstermanual")
 
 /obj/item/monster_manual/Topic(href, href_list)
 	..()
 	if(!Adjacent(usr))
-		usr << browse(null,"window=monstermanual")
+		show_browser(usr, null, "window=monstermanual")
 		return
 	if(href_list["temp"])
 		temp = null
@@ -81,4 +81,4 @@
 		if(Adjacent(usr))
 			src.interact(usr)
 		else
-			usr << browse(null,"window=monstermanual")
+			show_browser(usr, null, "window=monstermanual")

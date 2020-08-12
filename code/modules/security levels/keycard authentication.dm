@@ -74,7 +74,7 @@
 		dat += "<p><A href='?src=\ref[src];reset=1'>Back</A>"
 
 	send_theme_resources(user)
-	user << browse(enable_ui_theme(user, dat), "window=keycard_auth;size=500x350")
+	show_browser(user, enable_ui_theme(user, dat), "window=keycard_auth;size=500x350")
 	return
 
 

@@ -495,7 +495,7 @@ var/list/ai_verbs_default = list(
 			view_alerts = 0
 		var/t1 = text("window=[]", href_list["mach_close"])
 		unset_machine()
-		src << browse(null, t1)
+		show_browser(src, null, t1)
 	if (href_list["switchcamera"])
 		switchCamera(locate(href_list["switchcamera"])) in cameranet.cameras
 	if (href_list["showalerts"])
@@ -524,7 +524,7 @@ var/list/ai_verbs_default = list(
 			to_chat(src, "<span class='notice'>Unable to locate visual entry.</span>")
 			return
 		var/info = cameraRecords[entry]
-		src << browse(text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", info[1], info[2]), text("window=[]", html_encode(info[1])))
+		show_browser(src, text("<HTML><HEAD><TITLE>[]</TITLE></HEAD><BODY><TT>[]</TT></BODY></HTML>", info[1], info[2]), text("window=[]", html_encode(info[1])))
 		return
 
 	return

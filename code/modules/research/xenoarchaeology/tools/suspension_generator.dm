@@ -108,7 +108,7 @@
 		dat += "<br>"
 	dat += "<A href='?src=\ref[src];refresh=1'>Refresh console</A><br>"
 	dat += "<A href='?src=\ref[src];close=1'>Close console</A>"
-	user << browse(dat, "window=suspension;size=500x400")
+	show_browser(user, dat, "window=suspension;size=500x400")
 	onclose(user, "suspension")
 
 /obj/machinery/suspension_gen/Topic(href, href_list)
@@ -149,7 +149,7 @@
 		locked = 1
 	else if(href_list["close"])
 		usr.unset_machine()
-		usr << browse(null, "window=suspension")
+		show_browser(usr, null, "window=suspension")
 
 	updateUsrDialog()
 

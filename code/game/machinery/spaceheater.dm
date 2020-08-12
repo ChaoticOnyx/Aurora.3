@@ -84,7 +84,7 @@
 		update_icon()
 
 		if(!panel_open && user.machine == src)
-			user << browse(null, "window=spaceheater")
+			show_browser(user, null, "window=spaceheater")
 			user.unset_machine()
 
 		return
@@ -166,7 +166,7 @@
 					return
 		updateDialog()
 	else
-		usr << browse(null, "window=spaceheater")
+		show_browser(usr, null, "window=spaceheater")
 		usr.unset_machine()
 	return
 

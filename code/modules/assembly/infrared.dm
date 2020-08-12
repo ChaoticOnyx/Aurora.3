@@ -113,7 +113,7 @@
 		var/dat = text("<TT><B>Infrared Laser</B>\n<B>Status</B>: []<BR>\n<B>Visibility</B>: []<BR>\n</TT>", (on ? text("<A href='?src=\ref[];state=0'>On</A>", src) : text("<A href='?src=\ref[];state=1'>Off</A>", src)), (src.visible ? text("<A href='?src=\ref[];visible=0'>Visible</A>", src) : text("<A href='?src=\ref[];visible=1'>Invisible</A>", src)))
 		dat += "<BR><BR><A href='?src=\ref[src];refresh=1'>Refresh</A>"
 		dat += "<BR><BR><A href='?src=\ref[src];close=1'>Close</A>"
-		user << browse(dat, "window=infra")
+		show_browser(user, dat, "window=infra")
 		onclose(user, "infra")
 		return
 
@@ -121,7 +121,7 @@
 	Topic(href, href_list)
 		..()
 		if(!usr.canmove || usr.stat || usr.restrained() || !in_range(loc, usr))
-			usr << browse(null, "window=infra")
+			show_browser(usr, null, "window=infra")
 			onclose(usr, "infra")
 			return
 
@@ -136,7 +136,7 @@
 					first.vis_spread(visible)
 
 		if(href_list["close"])
-			usr << browse(null, "window=infra")
+			show_browser(usr, null, "window=infra")
 			return
 
 		if(usr)

@@ -100,7 +100,7 @@
 					playsound(loc, 'sound/arcade/Ori_begin.ogg', 1, 1, extrarange = -3, falloff = 10, required_asfx_toggles = ASFX_ARCADE)
 					cooldown = world.time + 300
 				dat = "<center><h1>Orion Trail[emagged ? ": Realism Edition" : ""]</h1><br>Learn how our ancestors got to Orion, and have fun in the process!</center><br><P ALIGN=Right><a href='?src=\ref[src];continue=1'>Start New Game</a></P>"
-				user << browse(dat, "window=arcade")
+				show_browser(user, dat, "window=arcade")
 				return
 			else
 				event_title = event
@@ -182,7 +182,7 @@
 	dat += "[view==ORION_VIEW_MAIN ? "" : "<a href='?src=\ref[src];continue=1'>"]Main[view==ORION_VIEW_MAIN ? "" : "</a>"]<BR>"
 	dat += "[view==ORION_VIEW_SUPPLIES ? "" : "<a href='?src=\ref[src];supplies=1'>"]Supplies[view==ORION_VIEW_SUPPLIES ? "" : "</a>"]<BR>"
 	dat += "[view==ORION_VIEW_CREW ? "" : "<a href='?src=\ref[src];crew=1'>"]Crew[view==ORION_VIEW_CREW ? "" : "</a>"]</P>"
-	user << browse(dat, "window=arcade")
+	show_browser(user, dat, "window=arcade")
 
 /obj/machinery/computer/arcade/orion_trail/Topic(href,href_list)
 	if(href_list["continue"])
@@ -455,7 +455,7 @@
 			to_chat(usr, "<span class='danger'><font size=3>You're never going to make it to Orion...</font></span>")
 			var/mob/living/M = usr
 			M.visible_message("\The [M] starts rapidly deteriorating.")
-			to_chat(M, browse (null,"window=arcade"))
+			show_browser(M, null, "window=arcade")
 			for(var/i=0;i<10;i++)
 				sleep(10)
 				M.Stun(5)

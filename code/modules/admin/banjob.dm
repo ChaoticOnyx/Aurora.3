@@ -554,7 +554,7 @@ var/list/jobban_keylist = list() // Global jobban list.
 	jobs += "</tr></table>"
 	body = "<body>[jobs]</body>"
 	dat = "<tt>[header][body]</tt>"
-	usr << browse(dat, "window=jobban_panel;size=800x490")
+	show_browser(usr, dat, "window=jobban_panel;size=800x490")
 	return
 
 /**

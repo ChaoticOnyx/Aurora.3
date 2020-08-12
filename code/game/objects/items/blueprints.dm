@@ -69,7 +69,7 @@ move an amendment</a> to the drawing.</p>
 		else
 			return
 	text += "</BODY></HTML>"
-	usr << browse(text, "window=blueprints")
+	show_browser(usr, text, "window=blueprints")
 	onclose(usr, "blueprints")
 
 

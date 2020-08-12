@@ -98,7 +98,7 @@
 	else
 		data += "<center>No faxes have been sent out.</center>"
 
-	usr << browse("<HTML><HEAD><TITLE>Centcomm Fax History</TITLE></HEAD><BODY>[data]</BODY></HTML>", "window=Centcomm Fax History")
+	show_browser(usr, "<HTML><HEAD><TITLE>Centcomm Fax History</TITLE></HEAD><BODY>[data]</BODY></HTML>", "window=Centcomm Fax History")
 
 
 /client/proc/launch_ccia_shuttle()

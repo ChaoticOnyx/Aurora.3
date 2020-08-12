@@ -339,7 +339,7 @@ INITIALIZE_IMMEDIATE(/mob/abstract/new_player)
 
 	dat += "</center>"
 	send_theme_resources(src)
-	src << browse(enable_ui_theme(src, dat), "window=latechoices;size=300x640;can_close=1")
+	show_browser(src, enable_ui_theme(src, dat), "window=latechoices;size=300x640;can_close=1")
 
 
 /mob/abstract/new_player/proc/create_character()
@@ -413,14 +413,14 @@ INITIALIZE_IMMEDIATE(/mob/abstract/new_player)
 	dat += SSrecords.get_manifest(OOC = 1)
 
 	send_theme_resources(src)
-	src << browse(enable_ui_theme(src, dat), "window=manifest;size=370x420;can_close=1")
+	show_browser(src, enable_ui_theme(src, dat), "window=manifest;size=370x420;can_close=1")
 
 /mob/abstract/new_player/Move()
 	return 0
 
 /mob/abstract/new_player/proc/close_spawn_windows()
-	src << browse(null, "window=latechoices") //closes late choices window)
-	src << browse(null, "window=playersetup") //closes the player setup window)
+	show_browser(src, null, "window=latechoices") //closes late choices window)
+	show_browser(src, null, "window=playersetup") //closes the player setup window)
 
 /mob/abstract/new_player/proc/has_admin_rights()
 	return check_rights(R_ADMIN, 0, src)

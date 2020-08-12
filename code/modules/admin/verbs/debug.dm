@@ -467,11 +467,11 @@
 	for(var/path in SSgarbage.sleptDestroy)
 		dat += "[path]<BR>"
 
-	usr << browse(dat, "window=dellog")
+	show_browser(usr, dat, "window=dellog")
 
 /client/proc/cmd_display_init_log()
 	set category = "Debug"
 	set name = "Display Initialize() Log"
 	set desc = "Displays a list of things that didn't handle Initialize() properly"
 
-	usr << browse(replacetext(SSatoms.InitLog(), "\n", "<br>"), "window=initlog")
+	show_browser(usr, replacetext(SSatoms.InitLog(), "\n", "<br>"), "window=initlog")

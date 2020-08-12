@@ -48,7 +48,7 @@
 			if(pai.mind) update_antag_icons(pai.mind)
 
 			pai_candidates -= candidate
-			usr << browse(null, "window=findPai")
+			show_browser(usr, null, "window=findPai")
 
 	var/datum/vueui/ui = href_list["vueui"]
 	if(!istype(ui))
@@ -249,7 +249,7 @@
 		</html>
 	"}
 
-	user << browse(dat, "window=findPai")
+	show_browser(user, dat, "window=findPai")
 
 /datum/controller/subsystem/pai/proc/requestRecruits(mob/user)
 	inquirer = user

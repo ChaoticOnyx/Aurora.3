@@ -623,7 +623,7 @@
 		dat += "The request is [request["request_age"]] days old.<br>"
 		dat += "OPTIONS: <a href='byond://?src=\ref[src];linkingrequest=[request["id"]];linkingaction=accept'>Accept Request</a> | <a href='byond://?src=\ref[src];linkingrequest=[request["id"]];linkingaction=deny'>Deny Request</a>"
 
-	src << browse(dat, "window=LinkingRequests")
+	show_browser(src, dat, "window=LinkingRequests")
 	return
 
 /client/proc/gather_linking_requests()

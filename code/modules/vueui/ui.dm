@@ -87,7 +87,7 @@ main ui datum.
 	if(width && height)
 		params += "size=[width]x[height];"
 	send_resources_and_assets(user.client)
-	user << browse(generate_html(), params)
+	show_browser(user, generate_html(), params)
 	winset(user, "mapwindow.map", "focus=true")
 	addtimer(CALLBACK(src, /datum/vueui/proc/setclose), 1)
 
@@ -102,7 +102,7 @@ main ui datum.
 /datum/vueui/proc/close()
 	object.vueui_on_close(src)
 	SSvueui.ui_closed(src)
-	user << browse(null, "window=[windowid]")
+	show_browser(user, null, "window=[windowid]")
 	status = null
 
 /**

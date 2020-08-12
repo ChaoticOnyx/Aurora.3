@@ -369,7 +369,7 @@
 		[banhtml.Join("")]
 	</body>
 	"}
-	usr << browse(html,"window=stickybans;size=700x400")
+	show_browser(usr, html, "window=stickybans;size=700x400")
 
 /proc/sticky_banned_ckeys()
 	if (establish_db_connection(dbcon) || length(SSstickyban.dbcache))

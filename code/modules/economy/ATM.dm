@@ -241,9 +241,9 @@ log transactions
 				dat += "</form>"
 
 		send_theme_resources(user)
-		user << browse(enable_ui_theme(user, dat),"window=atm;size=550x650")
+		show_browser(user, enable_ui_theme(user, dat),"window=atm;size=550x650")
 	else
-		user << browse(null,"window=atm")
+		show_browser(user, null, "window=atm")
 
 /obj/machinery/atm/Topic(var/href, var/href_list)
 	if(href_list["choice"])
@@ -463,7 +463,7 @@ log transactions
 					release_held_id(usr)
 			if("logout")
 				authenticated_account = null
-				//usr << browse(null,"window=atm")
+				//show_browser(usr, null, "window=atm")
 
 	src.attack_hand(usr)
 

@@ -56,7 +56,7 @@
 /obj/item/device/soulstone/Topic(href, href_list)
 	var/mob/U = usr
 	if (!in_range(src, U)||U.machine!=src)
-		U << browse(null, "window=soulstone")
+		show_browser(U, null, "window=soulstone")
 		U.unset_machine()
 		return
 
@@ -65,7 +65,7 @@
 
 	switch(href_list["choice"])//Now we switch based on choice.
 		if ("Close")
-			U << browse(null, "window=soulstone")
+			show_browser(U, null, "window=soulstone")
 			U.unset_machine()
 			return
 

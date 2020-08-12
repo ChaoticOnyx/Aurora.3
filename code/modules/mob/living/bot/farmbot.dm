@@ -71,7 +71,7 @@
 		dat += "Remove dead plants: <A href='?src=\ref[src];removedead=1'>[removes_dead ? "Yes" : "No"]</A><BR>"
 		dat += "</TT>"
 
-	user << browse("<HEAD><TITLE>Farmbot v1.1 controls</TITLE></HEAD>[dat]", "window=autofarm")
+	show_browser(user, "<HEAD><TITLE>Farmbot v1.1 controls</TITLE></HEAD>[dat]", "window=autofarm")
 	onclose(user, "autofarm")
 	return
 
