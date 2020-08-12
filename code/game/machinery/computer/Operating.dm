@@ -38,7 +38,7 @@
 	if ( (get_dist(src, user) > 1 ) || (stat & (BROKEN|NOPOWER)) )
 		if (!istype(user, /mob/living/silicon))
 			user.unset_machine()
-			user << browse(null, "window=op")
+			show_browser(user, null, "window=op")
 			return
 
 	user.set_machine(src)
@@ -63,7 +63,7 @@ Blood Oxygenation: <b>[victim.get_blood_oxygenation()]</b><br>
 <BR>
 <B>No Patient Detected</B>
 "}
-	user << browse(dat, "window=op")
+	show_browser(user, dat, "window=op")
 	onclose(user, "op")
 
 /obj/machinery/computer/operating/Topic(href, href_list)

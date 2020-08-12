@@ -282,4 +282,4 @@
 
 	out += "</ul>"
 
-	usr << browse(out.Join("<br>"), "window=openturfanalysis-\ref[T]")
+	show_browser(usr, out.Join("<br>"), "window=openturfanalysis-\ref[T]")

@@ -83,7 +83,7 @@
 	for(var/path in tmplist)
 		dat += "[path] - [tmplist[path]] times<BR>"
 
-	usr << browse(dat, "window=qdeletedlog")
+	show_browser(usr, dat, "window=qdeletedlog")
 
 #define SearchVar(X) DoSearchVar(X, "Global: " + #X)
 

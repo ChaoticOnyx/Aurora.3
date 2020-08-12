@@ -22,7 +22,7 @@
 		close_window(usr)
 
 /datum/component/multitool/proc/close_window(var/mob/user)
-	user << browse(null, "window=multitool")
+	show_browser(user, null, "window=multitool")
 
 /datum/component/multitool/proc/buffer(var/obj/item/device/multitool/multitool)
 	. += "<b>Buffer Memory:</b><br>"

@@ -355,7 +355,7 @@ var/list/obj/machinery/requests_console/allConsoles = list()
 			dat += "<b>[department] Department</b><hr>"
 			dat += "[info]"
 		dat += "</center>"
-		usr << browse(dat, "window=Information;size=560x240")
+		show_browser(usr, dat, "window=Information;size=560x240")
 
 	// Toggle the paper bin lid.
 	if(href_list["setLid"])

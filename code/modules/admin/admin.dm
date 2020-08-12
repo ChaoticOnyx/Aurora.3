@@ -223,7 +223,7 @@ proc/admin_notice(var/message, var/rights)
 		</body></html>
 	"}
 
-	usr << browse(body, "window=adminplayeropts;size=550x515")
+	show_browser(usr, body, "window=adminplayeropts;size=550x515")
 	feedback_add_details("admin_verb","SPP") //If you are copy-pasting this, ensure the 2nd parameter is unique to the new proc!
 
 
@@ -285,7 +285,7 @@ proc/admin_notice(var/message, var/rights)
 			if(index == page)
 				dat += "</b>"
 
-	usr << browse(dat, "window=player_notes;size=400x400")
+	show_browser(usr, dat, "window=player_notes;size=400x400")
 
 
 /datum/admins/proc/player_has_info(var/key as text)
@@ -342,7 +342,7 @@ proc/admin_notice(var/message, var/rights)
 		dat += "<A href='?src=\ref[src];add_player_info=[key]'>Add Comment</A><br>"
 
 		dat += "</body></html>"
-		usr << browse(dat, "window=adminplayerinfo;size=480x480")
+		show_browser(usr, dat, "window=adminplayerinfo;size=480x480")
 	else
 		show_notes_sql(key)
 
@@ -602,7 +602,7 @@ proc/admin_notice(var/message, var/rights)
 			dat+="Please report this on GitHub, along with what you did to make this appear."
 
 	send_theme_resources(usr)
-	usr << browse(enable_ui_theme(usr, dat), "window=admincaster_main;size=400x600")
+	show_browser(usr, enable_ui_theme(usr, dat), "window=admincaster_main;size=400x600")
 	onclose(usr, "admincaster_main")
 
 
@@ -622,7 +622,7 @@ proc/admin_notice(var/message, var/rights)
 				dat += "<tr><td>[ckey] - [ban[2]] - (<a href='?src=\ref[src];jobban_tgt=[ckey];jobban_job=[job];'>unban</a>)</td></tr>"
 
 	dat += "</table>"
-	usr << browse(dat, "window=ban;size=400x400")
+	show_browser(usr, dat, "window=ban;size=400x400")
 
 /datum/admins/proc/Game()
 	if(!check_rights(0))	return
@@ -644,7 +644,7 @@ proc/admin_notice(var/message, var/rights)
 		<A href='?src=\ref[src];vsc=default'>Choose a default ZAS setting</A><br>
 		"}
 
-	usr << browse(dat, "window=admin2;size=210x280")
+	show_browser(usr, dat, "window=admin2;size=210x280")
 	return
 
 /datum/admins/proc/Secrets()
@@ -662,7 +662,7 @@ proc/admin_notice(var/message, var/rights)
 				continue
 			dat += "<A href='?src=\ref[src];admin_secrets=\ref[item]'>[item.name()]</A><BR>"
 		dat += "<BR>"
-	usr << browse(dat, "window=secrets")
+	show_browser(usr, dat, "window=secrets")
 	return
 
 
@@ -1164,7 +1164,7 @@ proc/admin_notice(var/message, var/rights)
 		out += " None."
 	out += " <a href='?src=\ref[SSticker.mode];add_antag_type=1'>\[+\]</a><br/>"
 
-	usr << browse(out, "window=edit_mode[src]")
+	show_browser(usr, out, "window=edit_mode[src]")
 	feedback_add_details("admin_verb","SGM")
 
 

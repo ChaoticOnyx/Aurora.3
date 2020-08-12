@@ -500,7 +500,7 @@ datum/preferences
 	dat += "<a href='?src=\ref[src];close_load_dialog=1'>Close</a><br>"
 	dat += "</center></tt>"
 	send_theme_resources(user)
-	user << browse(enable_ui_theme(user, dat), "window=saves;size=300x390")
+	show_browser(user, enable_ui_theme(user, dat), "window=saves;size=300x390")
 
 
 /datum/preferences/proc/open_load_dialog_file(mob/user)
@@ -521,10 +521,10 @@ datum/preferences
 	dat += "<hr>"
 	dat += "</center></tt>"
 	send_theme_resources(user)
-	user << browse(enable_ui_theme(user, dat), "window=saves;size=300x390")
+	show_browser(user, enable_ui_theme(user, dat), "window=saves;size=300x390")
 
 /datum/preferences/proc/close_load_dialog(mob/user)
-	user << browse(null, "window=saves")
+	show_browser(user, null, "window=saves")
 
 // Logs a character to the database. For statistics.
 /datum/preferences/proc/log_character(var/mob/living/carbon/human/H)

@@ -100,7 +100,7 @@
 	dat += "<hr>"
 	dat += "<A href='?src=\ref[src];refresh=1'>Refresh</a><br>"
 	dat += "<A href='?src=\ref[src];close=1'>Close</a><br>"
-	user << browse(dat,"window=depth_scanner;size=300x500")
+	show_browser(user, dat, "window=depth_scanner;size=300x500")
 	onclose(user, "depth_scanner")
 
 /obj/item/device/depth_scanner/Topic(href, href_list)
@@ -124,6 +124,6 @@
 			qdel(current)
 	else if(href_list["close"])
 		usr.unset_machine()
-		usr << browse(null, "window=depth_scanner")
+		show_browser(usr, null, "window=depth_scanner")
 
 	updateSelfDialog()

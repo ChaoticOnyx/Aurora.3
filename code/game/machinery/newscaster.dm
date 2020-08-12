@@ -418,7 +418,7 @@ var/list/obj/machinery/newscaster/allCasters = list() //Global list that will co
 				dat+="<A href='?src=\ref[src];setScreen=[9]'>Return</A>"
 
 		send_theme_resources(human_or_robot_user)
-		human_or_robot_user << browse(enable_ui_theme(human_or_robot_user, dat), "window=newscaster_main;size=600x900")
+		show_browser(human_or_robot_user, enable_ui_theme(human_or_robot_user, dat), "window=newscaster_main;size=600x900")
 		onclose(human_or_robot_user, "newscaster_main")
 
 /obj/machinery/newscaster/Topic(href, href_list)
@@ -898,7 +898,7 @@ obj/item/newspaper/attack_self(mob/user as mob)
 
 		dat+="<BR><HR><div align='center'>[src.curr_page+1]</div>"
 		send_theme_resources(src)
-		human_user << browse(enable_ui_theme(human_user, dat), "window=newspaper_main;size=300x400")
+		show_browser(human_user, enable_ui_theme(human_user, dat), "window=newspaper_main;size=300x400")
 		onclose(human_user, "newspaper_main")
 	else
 		to_chat(user, "The paper is full of intelligible symbols!")

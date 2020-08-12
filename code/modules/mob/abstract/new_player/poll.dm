@@ -28,7 +28,7 @@
 
 		output += "</table>"
 		send_theme_resources(src)
-		src << browse(enable_ui_theme(src, output),"window=playerpolllist;size=500x300")
+		show_browser(src, enable_ui_theme(src, output),"window=playerpolllist;size=500x300")
 
 /mob/abstract/new_player/proc/show_poll_link(var/pollid = -1)
 	if(pollid == -1) return
@@ -132,7 +132,7 @@
 				output += "</div>"
 
 				send_theme_resources(src)
-				src << browse(enable_ui_theme(src, output),"window=playerpoll;size=500x250")
+				show_browser(src, enable_ui_theme(src, output),"window=playerpoll;size=500x250")
 
 			//Polls with a text input
 			if("TEXT")
@@ -178,7 +178,7 @@
 					output += "[vote_text]"
 
 				send_theme_resources(src)
-				src << browse(enable_ui_theme(src, output),"window=playerpoll;size=500x500")
+				show_browser(src, enable_ui_theme(src, output),"window=playerpoll;size=500x500")
 
 			//Polls with a text input
 			if("NUMVAL")
@@ -253,7 +253,7 @@
 					output += "</form>"
 
 				send_theme_resources(src)
-				src << browse(enable_ui_theme(src, output),"window=playerpoll;size=500x500")
+				show_browser(src, enable_ui_theme(src, output),"window=playerpoll;size=500x500")
 
 			if("MULTICHOICE")
 				var/DBQuery/voted_query = dbcon.NewQuery("SELECT optionid FROM ss13_poll_vote WHERE pollid = [pollid] AND ckey = '[usr.ckey]'")
@@ -320,7 +320,7 @@
 				output += "</div>"
 
 				send_theme_resources(src)
-				src << browse(enable_ui_theme(src, output),"window=playerpoll;size=500x250")
+				show_browser(src, enable_ui_theme(src, output),"window=playerpoll;size=500x250")
 		return
 
 /mob/abstract/new_player/proc/vote_on_poll(var/pollid = -1, var/optionid = -1, var/multichoice = 0)
@@ -390,7 +390,7 @@
 		insert_query.Execute()
 
 		to_chat(usr, "<span class='notice'>Vote successful.</span>")
-		usr << browse(null,"window=playerpoll")
+		show_browser(usr, null, "window=playerpoll")
 
 
 /mob/abstract/new_player/proc/log_text_poll_reply(var/pollid = -1, var/replytext = "")
@@ -448,7 +448,7 @@
 		insert_query.Execute()
 
 		to_chat(usr, "<span class='notice'>Feedback logging successful.</span>")
-		usr << browse(null,"window=playerpoll")
+		show_browser(usr, null, "window=playerpoll")
 
 
 /mob/abstract/new_player/proc/vote_on_numval_poll(var/pollid = -1, var/optionid = -1, var/rating = null)
@@ -510,4 +510,4 @@
 		insert_query.Execute()
 
 		to_chat(usr, "<span class='notice'>Vote successful.</span>")
-		usr << browse(null,"window=playerpoll")
+		show_browser(usr, null, "window=playerpoll")

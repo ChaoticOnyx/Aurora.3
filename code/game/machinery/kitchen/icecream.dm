@@ -177,7 +177,7 @@
 
 	if(href_list["close"])
 		usr.unset_machine()
-		usr << browse(null,"window=icecreamvat")
+		show_browser(usr, null, "window=icecreamvat")
 	return
 
 /obj/item/reagent_containers/food/snacks/icecream

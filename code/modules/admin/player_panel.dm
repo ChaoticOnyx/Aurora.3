@@ -25,7 +25,7 @@
 			var/datum/antagonist/A = all_antag_types[antag_type]
 			dat += A.get_check_antag_output(src)
 		dat += "</body></html>"
-		usr << browse(dat, "window=roundstatus;size=400x500")
+		show_browser(usr, dat, "window=roundstatus;size=400x500")
 	else
 		alert("The game hasn't started yet!")
 

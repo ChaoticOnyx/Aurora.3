@@ -46,7 +46,7 @@
 
 /obj/item/stack/Destroy()
 	if (src && usr && usr.machine == src)
-		usr << browse(null, "window=stack")
+		show_browser(usr, null, "window=stack")
 	return ..()
 
 /obj/item/stack/update_icon()
@@ -75,7 +75,7 @@
 	if(!recipes)
 		return
 	if(!src || get_amount() <= 0)
-		user << browse(null, "window=stack")
+		show_browser(user, null, "window=stack")
 	user.set_machine(src) //for correct work of onclose
 
 	var/t1 = "<html><head><title>Constructions from [capitalize_first_letters(src.name)]</title></head><body><tt>Amount Left: [src.get_amount()]<br>"

@@ -83,7 +83,7 @@
 				else
 					text += "<a href='?src=\ref[t];SDQL_select=\ref[t]'>\ref[t]</a>: [t]<br>"
 
-			usr << browse(text, "window=SDQL-result")
+			show_browser(usr, text, "window=SDQL-result")
 
 		if("update")
 			if("set" in query_tree)

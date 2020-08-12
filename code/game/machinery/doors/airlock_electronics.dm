@@ -49,7 +49,7 @@
 
 	t1 += text("<p><a href='?src=\ref[];close=1'>Close</a></p>\n", src)
 
-	user << browse(t1, "window=airlock_electronics")
+	show_browser(user, t1, "window=airlock_electronics")
 	onclose(user, "airlock")
 
 /obj/item/airlock_electronics/Topic(href, href_list)
@@ -57,7 +57,7 @@
 	if(use_check_and_message(usr))
 		return
 	if(href_list["close"])
-		usr << browse(null, "window=airlock")
+		show_browser(usr, null, "window=airlock")
 		return
 
 	if(href_list["login"])

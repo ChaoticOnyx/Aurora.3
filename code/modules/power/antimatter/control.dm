@@ -291,7 +291,7 @@
 	if((get_dist(src, user) > 1) || (stat & (BROKEN|NOPOWER)))
 		if(!istype(user, /mob/living/silicon/ai))
 			user.unset_machine()
-			user << browse(null, "window=AMcontrol")
+			show_browser(user, null, "window=AMcontrol")
 			return
 	return ui_interact(user)
 
@@ -344,11 +344,11 @@
 	//Ignore input if we are broken or guy is not touching us, AI can control from a ways away
 	if(stat & (BROKEN|NOPOWER))
 		usr.unset_machine()
-		usr << browse(null, "window=AMcontrol")
+		show_browser(usr, null, "window=AMcontrol")
 		return
 
 	if(href_list["close"])
-		usr << browse(null, "window=AMcontrol")
+		show_browser(usr, null, "window=AMcontrol")
 		usr.unset_machine()
 		return
 
