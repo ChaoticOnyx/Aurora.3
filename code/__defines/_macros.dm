@@ -95,4 +95,4 @@
 #define isdatum(target) istype(target, /datum)
 
 #define __HTML_META_CHARSET__ "<meta charset=\"utf-8\">"
-#define show_browser(target, browser_content, browser_options) target << browse(browser_content ? __HTML_META_CHARSET__ + browser_content : browser_content, browser_options)
+#define show_browser(target, browser_content, browser_options) target << browse(browser_content && istext(browser_content) ? __HTML_META_CHARSET__ + browser_content : browser_content, browser_options)
